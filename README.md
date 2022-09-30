@@ -21,11 +21,13 @@ Then, compile the gRPC engine:
 cd ./grpc-engine &&  go build -o libgrpc_engine.so -buildmode=c-shared main.go
 ```
 
-After that, install the Lua rock:
+After that, install the corresponding Lua files:
 
-luarocks install grpc-client-nginx-module
+```shell
+install -m 664 lib/resty/*.lua /path/in/your/lua/package/path
+```
 
-Make sure the Lua rock version matches the tag version of the Nginx module.
+Make sure you have 
 
 Finally, setup the thread pool:
 
